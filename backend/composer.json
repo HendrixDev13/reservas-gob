@@ -1,0 +1,11 @@
+{
+  "name": "institucion/reservas-api",
+  "description": "API REST para reservas institucionales con PostgreSQL y JWT HS256 nativo de PHP",
+  "type": "project",
+  "require": {
+    "php": "^8.2",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-openssl": "*"
+  }
+}

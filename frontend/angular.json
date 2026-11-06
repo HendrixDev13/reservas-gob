@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "reservas-institucional": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/reservas-institucional",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [{"type":"initial","maximumWarning":"700kB","maximumError":"1.5MB"}],
+              "outputHashing": "all"
+            },
+            "development": {"optimization": false, "extractLicenses": false, "sourceMap": true}
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "reservas-institucional:build:production"
+            },
+            "development": {
+              "buildTarget": "reservas-institucional:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+          
+        }
+      }
+
+      }
+      
+    },"cli": {
+    "analytics": "eacc7361-51ef-4723-bf1e-3d7b4bcba4a8"
+  }
+    
+  }
+  
+
